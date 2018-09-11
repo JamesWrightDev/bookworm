@@ -20,10 +20,6 @@
 			<textarea class="form-control" name="description" id="description" ></textarea>
 		</div>
 		<div class="form-group">
-			<label for="file">Upload Cover</label>
-			<input class="form-control"type="file" name="file" id="file">
-		</div>
-		<div class="form-group">
 		 	 <button type="submit" class="btn btn-primary">Add Book</button>
 		  </div>
 		

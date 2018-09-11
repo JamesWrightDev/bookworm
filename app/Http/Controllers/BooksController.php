@@ -50,7 +50,7 @@ class BooksController extends Controller
             'author' => request('author'),
             'description'=> request('description')
             ]);
-            return redirect('/');
+            return redirect('/books');
     }
 
     /**
