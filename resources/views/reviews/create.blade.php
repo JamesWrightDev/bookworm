@@ -2,8 +2,9 @@
 
 @section('content')
 
-<h1>Add a Review</h1>
+
 <div class="col-md-8">
+	<h1>Add a Review</h1>
 	<form method="POST" action="/review">
 		{{csrf_field()}}
 		

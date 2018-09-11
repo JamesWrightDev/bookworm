@@ -2,8 +2,9 @@
 
 @section('content')
 
-<h1>Add a book</h1>
+
 <div class="col-md-8">
+	<h1>Add a book</h1>
 	<form method="POST" action="/books" enctype='multipart/form-data'>
 		{{csrf_field()}}
 		
