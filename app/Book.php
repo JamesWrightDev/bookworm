@@ -8,8 +8,8 @@ class Book extends Model
 
 	public function reviews()
 	{
-		return $this->hasMany('App\Review');
+		return $this->hasMany(Review::class);
 	}
-	protected $fillable = ['title','author','description','body'];
+	protected $fillable = ['title','author','description','body','bookcover'];
 
 }

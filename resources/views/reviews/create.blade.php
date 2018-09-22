@@ -4,12 +4,12 @@
 
 
 <div class="col-md-8">
-	<h1>Add a Review</h1>
-	<form method="POST" action="/review">
+	<h1>Add a Review for {{$book->title}}</h1>
+	<form method="POST" action="/books/addreview">
 		{{csrf_field()}}
-		
+		<input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
 		<div class="form-group">
-			<label for="title">Title</label>
+			<label for="title">Title </label>
 			<input class="form-control" type="text" name="title" id="title">
 		</div>
 		<div class="form-group">

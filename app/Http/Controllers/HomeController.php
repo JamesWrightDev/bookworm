@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
+        if(Auth::guard($guard)->check()){
+            return view('/books');
+        }
         return view('home');
     }
 }

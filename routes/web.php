@@ -25,6 +25,6 @@ Route::get('books/{book}', 'BooksController@show');
 Route::post('/books', 'BooksController@store');
 
 Route::get('/books/{book}/addreview', 'ReviewController@create');
-Route::post('/review', 'ReviewController@store');
+Route::post('/books/addreview', 'ReviewController@store');
 
 

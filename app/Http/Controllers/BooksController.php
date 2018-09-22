@@ -48,8 +48,10 @@ class BooksController extends Controller
           Book::create([
             'title' => request('title'),
             'author' => request('author'),
-            'description'=> request('description')
+            'description'=> request('description'),
+            'bookcover' => request('bookcover')
             ]);
+        
             return redirect('/books');
     }
 

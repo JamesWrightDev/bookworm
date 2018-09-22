@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\Book;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -22,27 +23,25 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Book $book)
     {
-        return view('/reviews/create');
+       
+        return view('/reviews/create', compact('book'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store()
+       public function store(Book $book)
     {
+       
         $this->validate(request(),
             [
             'title' => 'required',
             'body' => 'required'
             ]);
+      
         Review::create([
             'title'=>request('title'),
             'body'=>request('body'),
+            'book_id'=>request('book_id')
         ]);
         return redirect('/books');
 
