@@ -24,11 +24,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Book $book)
     {   
         
+
+        $books = Book::whereHas('users', function($q) {
+            $user_id = Auth()->id();
+            $q->where('user_id', $user_id);
+        })
+        ->get();
         
-        return view('/home');
+        return view('/home', compact('books'));
     }
 
 

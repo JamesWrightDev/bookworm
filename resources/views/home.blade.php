@@ -20,8 +20,16 @@
             </div>
             <h1>Welcome back, {{ Auth::user()->name }}</h1>
             <h3>You're Reading List:</h3>
-            <li>Book 1</li>
-        </div>
+           
+         
+                @foreach($books as $book)
+                <div class="row">
+                    <div class="col-md-6"><h2><a href="/books/{{$book->id}}">{{$book->title}}</a></h2></div>
+                    <div class="col-md-2"><button class="btn btn-danger">Mark As Read</button></div>
+                </div>
+                @endforeach
+                
+           
     </div>
 </div>
 @endsection

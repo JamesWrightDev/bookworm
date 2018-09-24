@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use DB;
 use App\Book;
 use App\Review;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
      
+
         /**
      * Display a listing of the resource.
      *
@@ -103,12 +106,11 @@ class BooksController extends Controller
     {
         //
     }
-    public function readlist(Book $book)
+    public function readlist(Request $request)
     {
-        DB::table('book_user')->insert(
-            ['user_id' => auth()->id(), 
-            'book_id' => request('book_id')]
-        );
+             Auth::user()
+            ->books()
+            ->attach($request->get('book_id'));
 
     }
 

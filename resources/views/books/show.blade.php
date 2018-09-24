@@ -18,7 +18,7 @@
     </div>
    
     <a href="/books/{{ $book-> id}}/addreview"><button class="btn btn-primary"> Add Review</button></a>
-    <form method="POST" action="/books/list">
+    <form method="POST" action="/books/addlist">
      {{csrf_field()}}
     <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
     <button class="btn btn-primary">Add to Reading List</button>

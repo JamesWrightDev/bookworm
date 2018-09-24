@@ -30,7 +30,9 @@ class User extends Authenticatable
     public function user(){
         return $this->hasMany(Review::class);
     }
-    public function book(){
-        return $this->belongsToMany('App\User', 'book_user');
+    public function books(){
+        return $this->belongsToMany('App\User', 'book_user', 'user_id', 'book_id')
+        ->as('subscription');
+
     }
 }

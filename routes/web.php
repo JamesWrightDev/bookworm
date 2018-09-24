@@ -20,10 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/books', 'BooksController@index');
-Route::get('/books/add', 'BooksController@create');
+Route::get('/books/add', 'BooksController@create')->middleware('auth');
 Route::get('books/{book}', 'BooksController@show');
-Route::post('/books', 'BooksController@store');
-Route::post('/books/list', 'BooksController@readlist');
+Route::post('/books', 'BooksController@store')->middleware('auth');
+Route::post('/books/addlist', 'BooksController@readlist')->middleware('auth');
 
 Route::get('/books/{book}/addreview', 'ReviewController@create');
 Route::post('/books/addreview', 'ReviewController@store');

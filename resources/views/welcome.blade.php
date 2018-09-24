@@ -1,10 +1,12 @@
 @extends('layouts.app')
-@section('content')
+@section('landing')
 
 <!-- HOME PAGE -->
-
-	<div class="col-md-12">
-	    <h1>Home Page</h1>
+	<div class="row">
+		<div class="col-md-12">
+		   	<div class="splash-image"></div>
+		  
+		</div>
 	</div>
 
 

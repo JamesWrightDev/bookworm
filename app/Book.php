@@ -10,11 +10,11 @@ class Book extends Model
 	{
 		return $this->hasMany(Review::class);
 	}
-	protected $fillable = ['title','author','description','body','bookcover'];
+	protected $fillable = ['title','author','description','body','bookcover','book_id'];
 
-	// protected $with = ['user']; 
-// 	public function user(){
-// 	return $this->belongsToMany('App\Book', 'book_user');
-// }
+	 
+	public function users(){
+	return $this->belongsToMany('App\Book', 'book_user');
+}
 
 }

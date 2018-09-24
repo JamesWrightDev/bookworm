@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +52,8 @@ class ReviewController extends Controller
             'book_id'=>request('book_id'),
             'user_id'=>auth()->id()
         ]);
-        return redirect('/books');
+        $book=request('book_id');
+        return redirect('/books/'.$book);
 
     }
 
