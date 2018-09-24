@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="col-md-8">
+<div class="col-md-6">
 	<h1>Add a Review for {{$book->title}}</h1>
 	<form method="POST" action="/books/addreview">
 		{{csrf_field()}}
@@ -15,6 +15,7 @@
 		<div class="form-group">
 			<label for="body">Review:</label>
 			<textarea class="form-control" name="body" id="body" ></textarea>
+		</div>
 		<div class="form-group">
 		 	 <button type="submit" class="btn btn-primary">Add Review</button>
 		  </div>

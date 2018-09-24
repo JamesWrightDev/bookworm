@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use App\Book;
+use App\User;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -22,11 +25,11 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         
-        if(Auth::guard($guard)->check()){
-            return view('/books');
-        }
-        return view('home');
+        
+        return view('/home');
     }
+
+
 }

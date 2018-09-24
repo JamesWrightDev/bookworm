@@ -23,8 +23,10 @@ Route::get('/books', 'BooksController@index');
 Route::get('/books/add', 'BooksController@create');
 Route::get('books/{book}', 'BooksController@show');
 Route::post('/books', 'BooksController@store');
+Route::post('/books/list', 'BooksController@readlist');
 
 Route::get('/books/{book}/addreview', 'ReviewController@create');
 Route::post('/books/addreview', 'ReviewController@store');
+
 
 

@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function user(){
+        return $this->hasMany(Review::class);
+    }
+    public function book(){
+        return $this->belongsToMany('App\User', 'book_user');
+    }
 }

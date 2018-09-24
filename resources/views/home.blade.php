@@ -19,6 +19,8 @@
                 
             </div>
             <h1>Welcome back, {{ Auth::user()->name }}</h1>
+            <h3>You're Reading List:</h3>
+            <li>Book 1</li>
         </div>
     </div>
 </div>

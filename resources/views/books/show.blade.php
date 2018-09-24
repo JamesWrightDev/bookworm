@@ -1,4 +1,3 @@
-
 <!-- Individual Book Pages
 	- Book details
 	- Reviews
@@ -19,28 +18,31 @@
     </div>
    
     <a href="/books/{{ $book-> id}}/addreview"><button class="btn btn-primary"> Add Review</button></a>
+    <form method="POST" action="/books/list">
+     {{csrf_field()}}
+    <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
     <button class="btn btn-primary">Add to Reading List</button>
+    </form>
+    
     <hr>
     <h1>Reviews</h1>
     <div>
-        @foreach($book->reviews as $review)
-            <article>
-            <div class="row">
-                <div class="col-md-4">
+    <div class="row">
+          @foreach($reviews as $review)
+                  
+                <div class="col-md-6 mb-3">
                 <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{$review->title}}</h4>
                     <p>{{$review->body}}</p>
+                    <p>Reviewed by {{$review->user->name}}, on {{ Carbon\Carbon::parse($review->created_at)->format('d/m/Y') }}</p>                  
+                    </div>
+                  </div>
                 </div>
-                
-                </div>
-            </div>
-            
-            </div>
-
-                
-            </article>
+                          
+       
         @endforeach
-    </div>
+        </div> 
+     </div>
 @endsection
 

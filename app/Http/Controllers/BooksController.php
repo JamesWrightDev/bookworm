@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Book;
+use App\Review;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -61,9 +63,11 @@ class BooksController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
-    {
-        return view('books.show', compact('book'));
+    public function show(Book $book, Review $review)
+    {   
+    
+        $reviews = $book->reviews;
+        return view('books.show', compact('book'), compact('reviews'));
     }
 
     /**
@@ -99,4 +103,14 @@ class BooksController extends Controller
     {
         //
     }
+    public function readlist(Book $book)
+    {
+        DB::table('book_user')->insert(
+            ['user_id' => auth()->id(), 
+            'book_id' => request('book_id')]
+        );
+
+    }
+
+    
 }

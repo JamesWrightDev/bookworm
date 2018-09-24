@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use App\Book;
+use App\Auth;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -31,17 +32,20 @@ class ReviewController extends Controller
 
        public function store(Book $book)
     {
+        
        
         $this->validate(request(),
             [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            
             ]);
-      
+           
         Review::create([
             'title'=>request('title'),
             'body'=>request('body'),
-            'book_id'=>request('book_id')
+            'book_id'=>request('book_id'),
+            'user_id'=>auth()->id()
         ]);
         return redirect('/books');
 
@@ -60,7 +64,7 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        
     }
 
     /**
