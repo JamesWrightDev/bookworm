@@ -25,7 +25,13 @@
                 @foreach($unreadBooks as $book)
                 <div class="row mb-2">
                     <div class="col-md-6"><h4><a href="/books/{{$book->id}}">{{$book->title}}</a></h4></div>
-                    <div class="col-md-2"><button class="btn btn-sm btn-outline-success">Mark As Read</button></div>
+                    <div class="col-md-2">
+                        <form action="/books/markread" method="POST">
+                        {{csrf_field()}}
+                        <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
+                        <button class="btn btn-sm btn-outline-success">Mark As Read</button>
+                        </form>
+                    </div>
                 </div>
                 @endforeach
                 <h3>You're completed Books</h3>

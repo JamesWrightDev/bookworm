@@ -118,9 +118,14 @@ class BooksController extends Controller
             return back();
 
     }
-    public function markRead(Request $request)
+    public function markread(Request $request, Book $book)
     {
-
+        
+     dd(
+        
+     );
+           
+      
     }
     
 }
