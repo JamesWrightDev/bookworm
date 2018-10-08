@@ -4,16 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use App\Book;
-use App\Auth;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-     public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -31,29 +25,28 @@ class ReviewController extends Controller
      */
     public function create(Book $book)
     {
-       
+
         return view('/reviews/create', compact('book'));
     }
 
        public function store(Book $book)
-    {
+    {   
         
-       
+   
         $this->validate(request(),
             [
             'title' => 'required',
-            'body' => 'required',
-            
+            'body' => 'required'
             ]);
-           
+      
         Review::create([
             'title'=>request('title'),
             'body'=>request('body'),
-            'book_id'=>request('book_id'),
-            'user_id'=>auth()->id()
+            'user_id'=>auth()->id(),
+            'rating'=>request('rating'),
+            'book_id'=>request('book_id')
         ]);
-        $book=request('book_id');
-        return redirect('/books/'.$book);
+        return redirect('/books');
 
     }
 
@@ -70,7 +63,7 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        
+        //
     }
 
     /**

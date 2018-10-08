@@ -3,26 +3,38 @@
 	- Reviews
  -->
 
+
 @extends('layouts.app') @section('content')
-    <div class="row mg-top">
+    <div class="row mt-2">
 
         <div class="col-md-4">
         	<h2>{{ $book->title }} </h2>
             <br>
             <strong>Author: </strong><p>{{ $book->author }} </p>
             <strong>Description:</strong><p>{{ $book->description }} </p>
+            <strong>Rating:</strong><p>{{ round($reviews->avg('rating')) }} /5 </p>
         </div>
         <div class="col-md-4">
-            <img class="book-cover" src="{{$book->bookcover}}" alt="Dune Cover">
+            <img class="book-cover" src="{{$book->bookcover}}" alt="Book Cover">
         </div>
     </div>
-   
-    <a href="/books/{{ $book-> id}}/addreview"><button class="btn btn-primary"> Add Review</button></a>
-    <form method="POST" action="/books/addlist">
-     {{csrf_field()}}
-    <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
-    <button class="btn btn-primary">Add to Reading List</button>
-    </form>
+    <div class="col-md-6 mt-3">
+        <div class="row">
+            <div class="col-md-12 mb-2">
+                <a href="/books/{{ $book-> id}}/addreview"><button class="btn btn-primary"> Add Review</button></a>
+            </div>
+            <div class="col-md-12 mb-2">
+                 <form method="POST" action="/books/addlist">
+                 {{csrf_field()}}
+                <input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
+                <button class="btn btn-primary">Add to Reading List</button>
+                </form>
+            </div>
+              
+        </div>
+    </div>
+ 
+    
     
     <hr>
     <h1>Reviews</h1>
@@ -35,7 +47,17 @@
                 <div class="card-body">
                     <h4 class="card-title">{{$review->title}}</h4>
                     <p>{{$review->body}}</p>
-                    <p>Reviewed by {{$review->user->name}}, on {{ Carbon\Carbon::parse($review->created_at)->format('d/m/Y') }}</p>                  
+                    <p>{{$review->rating}} / 5</p>
+                    <p>Reviewed by {{$review->user->name}}, on {{ Carbon\Carbon::parse($review->created_at)->format('d/m/Y') }}</p> 
+                    
+                    {{ Form::open(['action' =>['ReviewController@destroy', $review->id], 'method' => 'POST']) }}
+                   
+                        {{Form::hidden('_method','DELETE')}}
+                   
+                        {{ Form::submit('Remove', ['class' =>'btn btn-danger'])}}
+                   
+                    {{ Form::close() }}                
+                   
                     </div>
                   </div>
                 </div>

@@ -53,8 +53,12 @@
                                 <a class="nav-link btn btn-outline-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
+
                             <li class="btn nav-item">
                             <a href="/books">Browse</a>
+                            </li>
+                            <li class="btn nav-item">
+                            <a href="/home">My Library</a>
                             </li>
                             <li class='btn nav-item'><a href="/books/add">Add Book</a></li>
                             <li class="nav-item dropdown">

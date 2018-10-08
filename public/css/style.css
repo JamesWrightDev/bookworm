@@ -10,7 +10,20 @@ h1 {
 	text-transform: uppercase;
 }
 
-.splash-image{
+.jumbotron{
+  background-image: url('../img/landing_page-min.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+  background-color: inherit;
+
+}
+
+.home-icon{
+  width: 70px;
+  padding-top: 30px;
+  
+
 }
 
 .book-cover{

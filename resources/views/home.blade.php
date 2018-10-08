@@ -21,14 +21,21 @@
             <h1>Welcome back, {{ Auth::user()->name }}</h1>
             <h3>You're Reading List:</h3>
            
-         
-                @foreach($books as $book)
-                <div class="row">
-                    <div class="col-md-6"><h2><a href="/books/{{$book->id}}">{{$book->title}}</a></h2></div>
-                    <div class="col-md-2"><button class="btn btn-danger">Mark As Read</button></div>
+               
+                @foreach($unreadBooks as $book)
+                <div class="row mb-2">
+                    <div class="col-md-6"><h4><a href="/books/{{$book->id}}">{{$book->title}}</a></h4></div>
+                    <div class="col-md-2"><button class="btn btn-sm btn-outline-success">Mark As Read</button></div>
                 </div>
                 @endforeach
-                
+                <h3>You're completed Books</h3>
+                @foreach($completedBooks as $book)
+                <div class="row mb-2">
+                    <div class="col-md-6"><h4><a href="/books/{{$book->id}}">{{$book->title}}</a></h4></div>
+                    <div class="col-md-2">
+                        <a href="/books/{{$book->id}}/addreview"><button class="btn btn-sm btn-outline-info">Leave A Review</button></a></div>
+                </div>
+                @endforeach                
            
     </div>
 </div>

@@ -70,6 +70,10 @@ class BooksController extends Controller
     {   
     
         $reviews = $book->reviews;
+        $rating = $reviews->avg('rating');
+        
+        
+
         return view('books.show', compact('book'), compact('reviews'));
     }
 
@@ -104,15 +108,19 @@ class BooksController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        
     }
     public function readlist(Request $request)
     {
              Auth::user()
             ->books()
             ->attach($request->get('book_id'));
+            return back();
 
     }
+    public function markRead(Request $request)
+    {
 
+    }
     
 }

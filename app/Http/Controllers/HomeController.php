@@ -28,13 +28,21 @@ class HomeController extends Controller
     {   
         
 
-        $books = Book::whereHas('users', function($q) {
+        $unreadBooks = Book::whereHas('users', function($q) {
             $user_id = Auth()->id();
-            $q->where('user_id', $user_id);
+            $q->where('user_id', $user_id)
+            ->where('is_completed', 0);
+        })
+        ->get();
+
+        $completedBooks = Book::whereHas('users', function($q) {
+            $user_id = Auth()->id();
+            $q->where('user_id', $user_id)
+            ->where('is_completed', 1);
         })
         ->get();
         
-        return view('/home', compact('books'));
+        return view('/home', compact('unreadBooks','completedBooks'));
     }
 
 
