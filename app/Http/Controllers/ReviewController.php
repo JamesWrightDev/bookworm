@@ -32,7 +32,7 @@ class ReviewController extends Controller
        public function store(Book $book, Request $request)
     {   
         $request->session()->flash('message.level', 'success');
-        $request->session()->flash('message.content', 'Review Added Sucessfully');
+        $request->session()->flash('message.content', 'Review Added');
         
         $book_id = request('book_id');
         $this->validate(request(),
@@ -86,8 +86,10 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
+        $request->session()->flash('message.level', 'success');
+        $request->session()->flash('message.content', 'Review Deleted');
         $review = Review::find($id);
         $review->delete();
         return redirect()->back();

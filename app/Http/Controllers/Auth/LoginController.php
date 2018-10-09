@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Session;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -28,6 +30,13 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
+    
+    protected function authenticated(Request $request, $user)
+    {
+        $request->session()->flash('message.level', 'success');
+        $request->session()->flash('message.content', 'Logged in Successfully!');
+    }
 
     /**
      * Create a new controller instance.
