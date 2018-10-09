@@ -77,8 +77,20 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Review $review)
+    public function update(Request $request, Review $review, Book $book)
     {
+        $review_id = request('review_id');
+
+        $review = Review::find($review_id);
+
+  
+        
+        $review->title = request('title');
+        $review->body = request('body');
+        $review->save();
+
+
+        return redirect('/home');
         
     }
 

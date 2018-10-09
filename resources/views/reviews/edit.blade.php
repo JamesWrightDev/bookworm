@@ -4,18 +4,19 @@
 
 
 <div class="col-md-6">
+
 	<h1>Edit your Review for {{$book->title}}</h1>
-	
-	<form method="POST" action="/books/editreview">
+		<form method="POST" action="/books/updatereview">
 		{{csrf_field()}}
 		<input type="hidden" id="book_id" name="book_id" value="{{$book->id}}">
+		<input type="hidden" id="review_id" name="review_id" value="{{$review->id}}">
 		<div class="form-group">
 			<label for="title">Title </label>
-			<input class="form-control" type="text" name="title" id="title">
+			<input class="form-control" type="text" name="title" id="title" value="{{$review->title}}">
 		</div>
 		<div class="form-group">
 			<label for="body">Review:</label>
-			<textarea class="form-control" name="body" id="body" ></textarea>
+			<textarea class="form-control" name="body" id="body">{{$review->body}}</textarea>
 		</div>
 		<div class="form-group">
 			<label for="rating">Rating</label>

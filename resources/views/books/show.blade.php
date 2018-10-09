@@ -58,15 +58,24 @@
                     <p>{{$review->body}}</p>
                     <p>{{$review->rating}} / 5</p>
                     <p>Reviewed by {{$review->user->name}}, on {{ Carbon\Carbon::parse($review->created_at)->format('d/m/Y') }}</p> 
+                                       
+                    @if(Auth::user()->id == $review->user_id)
+                        {{-- Delete Form --}}
+                        {{ Form::open(['action' =>['ReviewController@destroy', $review->id], 'method' => 'POST']) }}
+                       
+                            {{Form::hidden('_method','DELETE')}}
+                       
+                            {{ Form::submit('Remove', ['class' =>'btn btn-danger'])}}
+                       
+                        {{ Form::close() }}
+
+                        {{-- Edit Form --}}
+                        <a href="/books/editreview/{{$review->id}}/{{$book->id}}"><button class="btn btn-outline-info"> Edit Review</button></a>
+
+                    @endif
                     
-                    {{ Form::open(['action' =>['ReviewController@destroy', $review->id], 'method' => 'POST']) }}
-                   
-                        {{Form::hidden('_method','DELETE')}}
-                   
-                        {{ Form::submit('Remove', ['class' =>'btn btn-danger'])}}
-                   
-                    {{ Form::close() }}
-                    <a href="/books/{{ $book-> id}}/editreview"><button class="btn btn-outline-info"> Edit Review</button></a>            
+
+                                
                    
                     </div>
                   </div>
