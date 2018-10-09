@@ -2,9 +2,17 @@
 	- Book details
 	- Reviews
  -->
+ @if(session()->has('message.level'))
+    <div class="alert alert-{{ session('message.level') }}"> 
+    {!! session('message.content') !!}
+    </div>
+@endif
 
 
 @extends('layouts.app') @section('content')
+
+
+
     <div class="row mt-2">
 
         <div class="col-md-4">
@@ -18,6 +26,7 @@
             <img class="book-cover" src="{{$book->bookcover}}" alt="Book Cover">
         </div>
     </div>
+
     <div class="col-md-6 mt-3">
         <div class="row">
             <div class="col-md-12 mb-2">

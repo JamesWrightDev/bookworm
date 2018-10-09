@@ -40,9 +40,11 @@ class BooksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request )
     {
- 
+        $request->session()->flash('message.level', 'success');
+        $request->session()->flash('message.content', 'Books Added Sucessfully');
+
         $this->validate(request(),
             [
                 'title'=>'required',
@@ -112,7 +114,10 @@ class BooksController extends Controller
     }
     public function readlist(Request $request)
     {
-             Auth::user()
+            $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', 'Book added to Reading List');
+
+            Auth::user()
             ->books()
             ->attach($request->get('book_id'));
             return back();
@@ -120,11 +125,8 @@ class BooksController extends Controller
     }
     public function markread(Request $request, Book $book)
     {
-        
-     dd(
-        
-     );
-           
+            dd();
+
       
     }
     

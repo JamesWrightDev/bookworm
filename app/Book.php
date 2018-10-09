@@ -14,7 +14,7 @@ class Book extends Model
 
 	 
 	public function users(){
-	return $this->belongsToMany('App\Book', 'book_user');
+	return $this->belongsToMany('App\Book', 'book_user')->withPivot('is_completed');
 }
 
 }

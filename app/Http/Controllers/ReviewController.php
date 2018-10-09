@@ -29,10 +29,12 @@ class ReviewController extends Controller
         return view('/reviews/create', compact('book'));
     }
 
-       public function store(Book $book)
+       public function store(Book $book, Request $request)
     {   
+        $request->session()->flash('message.level', 'success');
+        $request->session()->flash('message.content', 'Review Added Sucessfully');
         
-   
+        $book_id = request('book_id');
         $this->validate(request(),
             [
             'title' => 'required',
@@ -46,7 +48,7 @@ class ReviewController extends Controller
             'rating'=>request('rating'),
             'book_id'=>request('book_id')
         ]);
-        return redirect('/books');
+        return redirect('/books/'.$book_id);
 
     }
 
@@ -75,7 +77,7 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        
     }
 
     /**
@@ -84,8 +86,10 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy($id)
     {
-        //
+        $review = Review::find($id);
+        $review->delete();
+        return redirect()->back();
     }
 }
