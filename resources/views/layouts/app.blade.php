@@ -75,7 +75,7 @@
          <div class="container">
             @yield('landing')
          </div>
-         <main class="container mt-5">
+         <main class="container mt-5 wrapper">
             @yield('content')
          </main>
       </div>
