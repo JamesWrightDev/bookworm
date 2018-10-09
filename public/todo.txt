@@ -1,0 +1,8 @@
+TODO:
+
+- Add Mailing functionality. 
+- Clean Up Front end. 
+
+DONE:
+- Add Footer
+- Add About page

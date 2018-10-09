@@ -13,6 +13,7 @@
             
             <h1>Welcome, {{ Auth::user()->name }}</h1>
             <h3>You're Reading List:</h3>
+                
                 @foreach($unreadBooks as $book)
                 <div class="row mb-2">
                     <div class="col-md-6"><h4><a href="/books/{{$book->id}}">{{$book->title}}</a></h4></div>

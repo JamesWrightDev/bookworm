@@ -90,5 +90,16 @@
             @yield('content')
         </main>
     </div>
+    <!-- Footer -->
+<footer class="page-footer font-small footer">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Bookworm:
+    <a href="https://www.james-wright.co.uk">Made by james wright</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>
