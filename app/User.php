@@ -31,8 +31,8 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
     public function books(){
-        return $this->belongsToMany('App\User', 'book_user', 'user_id', 'book_id')->withPivot('is_completed')
-        ->as('readinglist');
+        return $this->belongsToMany('App\User', 'book_user', 'user_id', 'book_id')
+        ->withPivot(['is_completed']);
 
     }
 }

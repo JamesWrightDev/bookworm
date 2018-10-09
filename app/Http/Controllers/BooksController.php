@@ -119,15 +119,21 @@ class BooksController extends Controller
 
             Auth::user()
             ->books()
-            ->attach($request->get('book_id'));
-            return back();
+            ->attach(($request->get('book_id')), ['is_completed' => false]);
+            return redirect('/home');
 
     }
-    public function markread(Request $request, Book $book)
+    public function markread(Request $request)
     {
-            dd();
 
-      
+        Auth::user()
+            ->books()
+            ->detach(($request->get('book_id')), ['is_completed' => false]);
+
+        Auth::user()
+            ->books()
+            ->attach(($request->get('book_id')), ['is_completed' =>true]);
+        return back();
     }
     
 }
