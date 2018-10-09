@@ -2,7 +2,7 @@ TODO:
 
 - Add Mailing functionality. 
 - Clean Up Front end. 
-
+- Dynamic Add Review, Add to Reading List
 
 
 DONE:
