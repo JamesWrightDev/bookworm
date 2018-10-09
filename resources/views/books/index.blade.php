@@ -10,8 +10,9 @@
 			    {!! session('message.content') !!}
 			    </div>
 			@endif
-			<div class="row">
+			<div class="row d-flex justify-content-between">
 			@foreach($books as $book)
+
 				@include('books.book')	
 			@endforeach
 			</div>
