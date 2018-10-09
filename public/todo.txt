@@ -2,6 +2,8 @@ TODO:
 
 - Add Mailing functionality. 
 - Clean Up Front end. 
+- Gaurd Review form deleting, Editing. 
+- Edit Reviews Functionality
 
 DONE:
 - Add Footer

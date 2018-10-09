@@ -49,17 +49,19 @@
 		</div>
 	</div>
 	<div class="row mt-4">
-		<div class="col-md-12 mt-5">
+		<div class="col-md-12 mt-5 card">
 			<h3 class="h3 mt-5 text-center">About</h3>
 			<p class="lead text-center">
-				BookWorm is fukk-stack book sharing app/platform/social <br>media thing built by me! Bookworm was built using;
-				<ul class="text-center">
-					<li>Laravel/PHP Backend</li>
-					<li>mySQL database</li>
-					<li>Bootstrap Front end ui</li>
-					<li>A lot of sleepless nights!</li>
+				BookWorm is full-stack book sharing app/platform/social media thing built by me! <br> It's not quite finished yet (I've got a ton more ideas to implement) but feel free to check it out. 		</p>
+				<p class="lead text-center mt-5">Bookworm was built using;</p>
+				<ul class="text-center list-group list-group-flush">
+					<li class="list-group-item">Laravel/PHP Backend</li>
+					<li class="list-group-item">mySQL database</li>
+					<li class="list-group-item">Bootstrap Front end ui</li>
+					<li class="list-group-item">A lot of sleepless nights!</li>
 				</ul> 
-			</p>
+	
+
 		</div>
 		
 	</div>
