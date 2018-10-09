@@ -65,7 +65,8 @@
                    
                         {{ Form::submit('Remove', ['class' =>'btn btn-danger'])}}
                    
-                    {{ Form::close() }}                
+                    {{ Form::close() }}
+                    <a href="/books/{{ $book-> id}}/editreview"><button class="btn btn-outline-info"> Edit Review</button></a>            
                    
                     </div>
                   </div>

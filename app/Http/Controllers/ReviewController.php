@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Review;
 use App\Book;
 use Illuminate\Http\Request;
+use Auth;
 
 class ReviewController extends Controller
 {
@@ -63,9 +64,10 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function edit(Review $review)
+    public function edit(Review $review, Auth $user, Book $book)
     {
-        //
+
+        return view('/reviews/edit', compact('review'),compact('book'), compact('user'));
     }
 
     /**
