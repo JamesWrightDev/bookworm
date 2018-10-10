@@ -80,17 +80,18 @@ class ReviewController extends Controller
     public function update(Request $request, Review $review, Book $book)
     {
         $review_id = request('review_id');
+        $book_id = request('book_id');
 
         $review = Review::find($review_id);
-
-  
-        
+               
         $review->title = request('title');
         $review->body = request('body');
+        $review->rating = request('rating');
         $review->save();
 
-
-        return redirect('/home');
+        $request->session()->flash('message.level', 'success');
+        $request->session()->flash('message.content', 'Review Updated');
+        return redirect('/books/'.$book_id);
         
     }
 
