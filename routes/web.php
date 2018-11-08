@@ -32,8 +32,8 @@ Route::post('/books/addlist', 'BooksController@readlist')->middleware('auth');
 Route::post('/books/markread', 'BooksController@markread')->middleware('auth');
 
 // Review Routes
-Route::get('/books/{book}/addreview', 'ReviewController@create');
-Route::post('/books/addreview', 'ReviewController@store');
+Route::get('/books/{book}/addreview', 'ReviewController@create')->middleware('auth');
+Route::post('/books/addreview', 'ReviewController@store')->middleware('auth');
 Route::get('/books/editreview/{review}/{book}', 'ReviewController@edit');
 Route::post('/books/updatereview', 'ReviewController@update');
 
