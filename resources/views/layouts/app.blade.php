@@ -72,7 +72,7 @@
                </div>
             </div>
          </nav>
-         <div class="container">
+         <div class="my-fluid-container">
             @yield('landing')
          </div>
          <main class="container mt-5 wrapper">

@@ -14,7 +14,9 @@
 
 
     <div class="row mt-2">
-
+         <div class="col-md-2 col-sm-6  mr-3">
+            <img class="book-cover" src="{{$book->bookcover}}" alt="Book Cover">
+        </div>
         <div class="col-md-4">
         	<h2>{{ $book->title }} </h2>
             <br>
@@ -22,12 +24,10 @@
             <strong>Description:</strong><p>{{ $book->description }} </p>
             <strong>Rating:</strong><p>{{ round($reviews->avg('rating')) }} /5 </p>
         </div>
-        <div class="col-md-4">
-            <img class="book-cover" src="{{$book->bookcover}}" alt="Book Cover">
-        </div>
+        
     </div>
 
-    <div class="col-md-6 mt-3">
+    <div class="col-md-6 col-sm-6 mt-3">
         <div class="row">
             <div class="col-md-12 mb-2">
                 <a href="/books/{{ $book-> id}}/addreview"><button class="btn btn-primary"> Add Review</button></a>

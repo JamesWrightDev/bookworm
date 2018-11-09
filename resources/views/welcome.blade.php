@@ -15,6 +15,12 @@
 			</div>
 		</div>
 	</div>
+	<div class="row d-flex align-items-center justify-content-center secondary-bg">
+		<div class="col-md-6">
+			<h3 class="text-center">Bookworm is a book review platform developed in Php, Laravel and Javascript. It's still in beta right now, but give it a try!</h3>
+		</div>
+		
+	</div>
 	<div class="row mt-5">
 		<div class="col-md-4 text-center mt-4">
 			<div class="card">
@@ -50,15 +56,7 @@
 	</div>
 	<div class="row mt-4">
 		<div class="col-md-12 mt-5 card">
-			<h3 class="h3 mt-5 text-center">About</h3>
-			<p class="lead text-center">
-				BookWorm is full-stack book sharing app/platform/social media thing built by me! <br> It's not quite finished yet (I've got a ton more ideas to implement) but feel free to check it out. 		</p>
-				<p class="lead text-center mt-5">Bookworm was built using;</p>
-				<ul class="text-center list-group list-group-flush">
-					<li class="list-group-item">Laravel/PHP Backend</li>
-					<li class="list-group-item">mySQL database</li>
-					<li class="list-group-item">Bootstrap Front end ui</li>
-					<li class="list-group-item">A lot of sleepless nights!</li>
+			
 				</ul> 
 	
 
