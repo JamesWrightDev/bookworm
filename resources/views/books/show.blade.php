@@ -46,7 +46,7 @@
     
     
     <hr>
-    <h1>Reviews</h1>
+    <h1>Reviews:</h1>
     <div>
     <div class="row">
           @foreach($reviews as $review)
