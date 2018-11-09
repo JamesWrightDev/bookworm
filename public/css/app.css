@@ -10494,7 +10494,7 @@ html {
   margin-right: auto;
 }
 
-.row-full .navbar-laravel {
+.navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
