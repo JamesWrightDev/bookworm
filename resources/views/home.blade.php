@@ -13,7 +13,7 @@
         <div class="col-md-6">
             
             <h1>Welcome, {{ Auth::user()->name }}</h1>
-            <h3>Your Reading List:</h3>
+            <h3>You're Reading List:</h3>
                 @if(count($unreadBooks) < 1)
                         <p>You have no books in your reading list, click <a href="/books">here</a>  to browse books. </p>
                     @endif
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 @endforeach
-                <h3>Your completed Books</h3>
+                <h3>You're completed Books</h3>
                 @foreach($completedBooks as $book)
                 <div class="row mb-2">
                     <div class="col-md-6"><h4><a href="/books/{{$book->id}}">{{$book->title}}</a></h4></div>
