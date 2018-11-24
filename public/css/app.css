@@ -10515,7 +10515,27 @@ body {
 }
 
 .jumbotron {
-  margin-bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  margin: 0;
+  border-radius: 0px;
+}
+
+.horizontal-center {
+  margin: 0 auto;
+}
+
+.landing-h1 {
+  color: white;
+  font-size: 6em;
+}
+
+.lead {
+  color: white;
+  font-size: 3em;
+  background-color: #EF8354;
+  border-radius: 10px;
 }
 
 h1 {
@@ -10523,15 +10543,24 @@ h1 {
   font-weight: 700;
   color: #EF8354;
   font-size: 4em;
-  text-decoration: underline;
 }
 
 h3 {
   font-size: 2em;
+  color: black;
 }
 
 .btn {
   border-radius: 2px;
+}
+
+.vertical-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home-icon {
@@ -10571,5 +10600,9 @@ h3 {
 ul li {
   list-style-type: none;
   font-size: 1.2em;
+}
+
+.card {
+  border-radius: 10px;
 }
 
