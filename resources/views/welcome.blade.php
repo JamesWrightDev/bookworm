@@ -12,7 +12,8 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 d-flex justify-content-center ">
-								<button class='btn btn-primary btn-lg'>Get Started</button>
+								
+						<a class="nav-link btn btn-primary mr-3" href="{{ route('register') }}">Get Started</a>
 						</div>
 					</div>
 		</div>
