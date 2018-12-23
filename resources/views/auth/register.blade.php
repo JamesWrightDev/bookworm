@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 d-flex justify-content-center">
-            <div class="card col-md-4 col-sm-12">
+            <div class="card col-lg-4 col-md-12 col-sm-12">
                 <div class="card-body">
                     <h3  class='text-center'>Register</h3>
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
